@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horse_id: 1
+  hay: MyString
+  water: MyString
+  grain: MyString
+  comments: 
+  manure: MyString
+
+two:
+  horse_id: 1
+  hay: MyString
+  water: MyString
+  grain: MyString
+  comments: 
+  manure: MyString

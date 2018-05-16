@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :stalls
   namespace :api do
     namespace :v1 do
+      resources :healthreports
+      resources :stalls
       resources :paddocks
       resources :orders
       resources :meals
@@ -12,9 +13,12 @@ Rails.application.routes.draw do
       resources :farriers
       resources :vets
       resources :phone_numbers
-      resources :users
       resources :barns
-
+      resources :users
+      resources :sessions, only: [:new, :create]
+      post '/login', to: "sessions#login"
+      post '/signup', to: "users#create"
+      get '/get_user', to: "auth#get_user"
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

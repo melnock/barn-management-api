@@ -4,13 +4,14 @@ class Api::V1::UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
-
     if @user.save
-      render json: user_hash(@user)
+      token = encode({user_id: @user.id})
+      render json: {user: @user,
+                    horses: find_horses(@user)
+                    jwt: token
+                  }
     else
-      render json: {
-        errors: @user.errors.full_messages
-      }
+      render json: {error: "Something doesn't match up"}
     end
   end
 
