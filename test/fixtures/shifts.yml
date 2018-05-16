@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_id: 1
+  date: 2018-05-15 10:15:25
+  clocked_in: 
+  clocked_out: 
+  total_time: 1
+
+two:
+  employee_id: 1
+  date: 2018-05-15 10:15:25
+  clocked_in: 
+  clocked_out: 
+  total_time: 1

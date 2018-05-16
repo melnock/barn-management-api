@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amenities: MyString
+  number_of_stalls: 1
+  address: MyString
+  board_cost: 1
+  number_of_paddocks: 1
+
+two:
+  amenities: MyString
+  number_of_stalls: 1
+  address: MyString
+  board_cost: 1
+  number_of_paddocks: 1

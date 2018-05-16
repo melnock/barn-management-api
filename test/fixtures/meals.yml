@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horse_id: 1
+  supply_id: 1
+  quantity: 1
+  supplements: 
+
+two:
+  horse_id: 1
+  supply_id: 1
+  quantity: 1
+  supplements: 

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supply_id: 1
+  quantity: 1
+  barn_id: 1
+  date: 2018-05-15 10:40:28
+  expected_delivery: 2018-05-15 10:40:28
+  recurring: 
+
+two:
+  supply_id: 1
+  quantity: 1
+  barn_id: 1
+  date: 2018-05-15 10:40:28
+  expected_delivery: 2018-05-15 10:40:28
+  recurring: 

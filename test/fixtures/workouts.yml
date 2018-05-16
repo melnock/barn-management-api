@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horse_id: 1
+  user_id: 1
+  is_training: 
+  is_lesson: 
+  duration: 1
+  date: 2018-05-15 10:11:03
+  intensity: 1
+
+two:
+  horse_id: 1
+  user_id: 1
+  is_training: 
+  is_lesson: 
+  duration: 1
+  date: 2018-05-15 10:11:03
+  intensity: 1

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  barn_id: 1
+  horse_id: 1
+
+two:
+  barn_id: 1
+  horse_id: 1

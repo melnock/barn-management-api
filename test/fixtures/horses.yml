@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birth_year: 1
+  owner_id: 1
+  stall_id: 1
+  tack: MyString
+  supplements: MyString
+  vet_id: 1
+  farrier_id: 1
+  paddock_id: 1
+
+two:
+  name: MyString
+  birth_year: 1
+  owner_id: 1
+  stall_id: 1
+  tack: MyString
+  supplements: MyString
+  vet_id: 1
+  farrier_id: 1
+  paddock_id: 1
