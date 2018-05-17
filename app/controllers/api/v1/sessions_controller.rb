@@ -37,10 +37,13 @@ class Api::V1::SessionsController < ApplicationController
 	def get_user
 		if user_in_session
 			render json: {user: user_in_session,
-										horses: find_horses(user_in_session)
+										horses: find_horses(user_in_session),
+                    barns: Barn.all
 									}
 		else
-			render json: {error: "Something doesn't match up"}
+			render json: {error: "Something doesn't match up",
+                    barns: Barn.all
+                    }
 		end
 
 	end

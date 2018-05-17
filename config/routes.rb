@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:new, :create]
       post '/login', to: "sessions#login"
       post '/signup', to: "users#create"
+      post '/newbarn', to: "barns#create"      
       get '/get_user', to: "sessions#get_user"
     end
   end

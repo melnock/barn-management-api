@@ -1,5 +1,4 @@
 class Api::V1::BarnsController < ApplicationController
-  skip_before_action :authenticate!, only: [:index, :show]
 
   def create
     @barn = Barn.new(barn_params)
@@ -34,7 +33,7 @@ class Api::V1::BarnsController < ApplicationController
   def make_stalls(barn)
     i=0
     barn.number_of_stalls.times do
-      Stall.create(barn_id: barn.id, stall_number: i++)
+      Stall.create(barn_id: barn.id, stall_number: i+=1)
     end
   end
 

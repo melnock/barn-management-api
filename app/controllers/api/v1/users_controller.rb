@@ -1,5 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authenticate!, only: :create
 
   def create
 
@@ -24,6 +23,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit([:name, :email, :password, :password_confirmation, :emergency_contact, :phone_number, :is_manager, :is_employee])
+    params.require(:user).permit([:name, :barn_id, :email, :password, :password_confirmation, :emergency_contact, :mailing_address, :phone_number, :is_manager, :is_employee])
   end
 end
