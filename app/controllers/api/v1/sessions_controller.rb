@@ -26,7 +26,8 @@ class Api::V1::SessionsController < ApplicationController
 
 			render json: {user: @user,
                     horses: find_horses(@user),
-										jwt: token
+										jwt: token,
+                    barns: Barn.all
 									}
 		else
 			render json: {error: "Something doesn't match up"}

@@ -7,8 +7,9 @@ class Api::V1::UsersController < ApplicationController
     if @user.save
       token = encode({user_id: @user.id})
       render json: {user: @user,
-                    horses: find_horses(@user)
-                    jwt: token
+                    horses: find_horses(@user),
+                    jwt: token,
+                    barns: Barn.all
                   }
     else
       render json: {error: "Something doesn't match up"}

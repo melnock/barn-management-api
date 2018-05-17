@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:new, :create]
       post '/login', to: "sessions#login"
       post '/signup', to: "users#create"
-      get '/get_user', to: "auth#get_user"
+      get '/get_user', to: "sessions#get_user"
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

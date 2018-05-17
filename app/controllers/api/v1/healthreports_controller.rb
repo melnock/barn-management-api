@@ -1,7 +1,7 @@
 class Api::V1::HealthreportsController < ApplicationController
 
   def create
-    @healthreport= Horse.new(healthreport_params)
+    @healthreport= Healthreport.new(healthreport_params)
 
     if @healthreport.save
       render json: @healthreport
