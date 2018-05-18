@@ -2,12 +2,9 @@ class Api::V1::BarnsController < ApplicationController
 
   def create
     @barn = Barn.new(barn_params)
-
     if @barn.save
-      user = User.all.find(current_user_id)
-      user.barn = @barn
-      make_stalls(barn)
-      make_paddocks(barn)
+      make_stalls(@barn)
+      make_paddocks(@barn)
       render json: @barn
     else
       render json: {
@@ -45,6 +42,6 @@ class Api::V1::BarnsController < ApplicationController
   end
 
   def barn_params
-    params.require(:barn).permit([:name, :number_of_paddocks, :number_of_stalls, :address, :board_cost, :amenities, :images])
+    params.require(:barn).permit([:name, :number_of_paddocks, :number_of_stalls, :address, :board_cost, :amenities => [], :images=>[:main, :indoor_arena, :outdoor_arena, :paddocks]])
   end
 end
