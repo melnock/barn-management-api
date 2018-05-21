@@ -23,11 +23,16 @@ class Api::V1::SessionsController < ApplicationController
 
 		if @user && @user.authenticate(params[:password])
 			token = encode({user_id: @user.id})
-
+      barn = Barn.find(@user.barn_id)
 			render json: {user: @user,
                     horses: find_horses(@user),
 										jwt: token,
-                    barns: Barn.all
+                    barns: Barn.all,
+                    current_barn: barn,
+                    vets: Vet.all,
+                    farriers: Farrier.all,
+                    paddocks: barn.paddocks,
+                    stalls: barn.stalls
 									}
 		else
 			render json: {error: "Something doesn't match up"}
@@ -36,9 +41,15 @@ class Api::V1::SessionsController < ApplicationController
 
 	def get_user
 		if user_in_session
+      barn = Barn.find(user_in_session.barn_id)
 			render json: {user: user_in_session,
 										horses: find_horses(user_in_session),
-                    barns: Barn.all
+                    barns: Barn.all,
+                    current_barn: barn,
+                    vets: Vet.all,
+                    farriers: Farrier.all,
+                    paddocks: barn.paddocks,
+                    stalls: barn.stalls
 									}
 		else
 			render json: {error: "Something doesn't match up",

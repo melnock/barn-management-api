@@ -59,7 +59,8 @@ class ApplicationController < ActionController::API
 
   def find_horses(user)
     stalls = user.barn.stalls
-    horses = stalls.map{|stall| stall.horse }
+    horses_in_stalls = stalls.map{|stall| stall.horse }
+    horses= horses_in_stalls.select{|horse| horse != nil}
   end
 
   private

@@ -5,11 +5,17 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       token = encode({user_id: @user.id})
-      render json: {user: @user,
+      barn = Barn.find(@user.barn_id)
+			render json: {user: @user,
                     horses: find_horses(@user),
-                    jwt: token,
-                    barns: Barn.all
-                  }
+										jwt: token,
+                    barns: Barn.all,
+                    current_barn: barn,
+                    vets: Vet.all,
+                    farriers: Farrier.all,
+                    paddocks: barn.paddocks,
+                    stalls: barn.stalls
+									}
     else
       render json: {error: "Something doesn't match up"}
     end

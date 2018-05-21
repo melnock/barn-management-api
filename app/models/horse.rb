@@ -1,5 +1,5 @@
 class Horse < ApplicationRecord
-  serialize :supplements, Hash
+  serialize :supplements, Array
   serialize :tack, Hash
   serialize :blankets, Hash
 
