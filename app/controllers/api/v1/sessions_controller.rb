@@ -32,7 +32,8 @@ class Api::V1::SessionsController < ApplicationController
                     vets: Vet.all,
                     farriers: Farrier.all,
                     paddocks: barn.paddocks,
-                    stalls: barn.stalls
+                    stalls: barn.stalls,
+                    users: barn.users
 									}
 		else
 			render json: {error: "Something doesn't match up"}
@@ -49,7 +50,8 @@ class Api::V1::SessionsController < ApplicationController
                     vets: Vet.all,
                     farriers: Farrier.all,
                     paddocks: barn.paddocks,
-                    stalls: barn.stalls
+                    stalls: barn.stalls,
+                    users: barn.users
 									}
 		else
 			render json: {error: "Something doesn't match up",

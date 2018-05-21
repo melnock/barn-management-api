@@ -9,6 +9,7 @@ class Api::V1::FarriersController < ApplicationController
         errors: @farrier.errors.full_messages
       }
     end
+  end
 
     private
 

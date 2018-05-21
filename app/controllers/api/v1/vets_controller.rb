@@ -10,6 +10,7 @@ class Api::V1::VetsController < ApplicationController
         errors: @vet.errors.full_messages
       }
     end
+  end
 
     private
 
