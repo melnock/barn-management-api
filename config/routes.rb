@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :meals
       resources :supplies
       resources :shifts
-      resources :horses
+      resources :horses, only: [:index, :create, :destroy, :update]
       resources :workouts
       resources :farriers
       resources :vets
