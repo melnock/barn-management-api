@@ -34,7 +34,8 @@ class Api::V1::SessionsController < ApplicationController
                     paddocks: barn.paddocks,
                     stalls: barn.stalls,
                     users: barn.users,
-                    healthreports: find_horses(@user).map{|h| h.healthreports}.flatten
+                    healthreports: find_horses(@user).map{|h| h.healthreports}.flatten,
+                    supplies: Supply.all
 
 									}
 		else
@@ -54,7 +55,9 @@ class Api::V1::SessionsController < ApplicationController
                     paddocks: barn.paddocks,
                     stalls: barn.stalls,
                     users: barn.users,
-                    healthreports: find_horses(user_in_session).map{|h| h.healthreports}.flatten
+                    healthreports: find_horses(user_in_session).map{|h| h.healthreports}.flatten,
+                    supplies: Supply.all
+
 									}
 		else
 			render json: {error: "Something doesn't match up",

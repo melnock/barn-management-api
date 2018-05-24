@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_134746) do
 
   create_table "supplies", force: :cascade do |t|
     t.text "protein_fiber_fat"
-    t.string "type"
+    t.string "type_of_supply"
     t.string "vendor"
     t.integer "cost"
     t.integer "weight"

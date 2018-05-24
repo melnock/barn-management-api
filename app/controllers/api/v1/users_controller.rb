@@ -16,7 +16,8 @@ class Api::V1::UsersController < ApplicationController
                     paddocks: barn.paddocks,
                     stalls: barn.stalls,
                     users: barn.users,
-                    healthreports: find_horses(@user).map{|h| h.healthreports}.flatten
+                    healthreports: find_horses(@user).map{|h| h.healthreports}.flatten,
+                    supplies: Supply.all
 									}
     else
       render json: {error: "Something doesn't match up"}

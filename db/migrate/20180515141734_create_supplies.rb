@@ -4,7 +4,7 @@ class CreateSupplies < ActiveRecord::Migration[5.2]
       # hash of the percentages of fat, protein and fiber for grains
       t.text :protein_fiber_fat
       #one of type: hay, grain, shavings
-      t.string :type
+      t.string :type_of_supply
       t.string :vendor
       t.integer :cost
       t.integer :weight
