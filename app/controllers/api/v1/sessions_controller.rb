@@ -33,7 +33,9 @@ class Api::V1::SessionsController < ApplicationController
                     farriers: Farrier.all,
                     paddocks: barn.paddocks,
                     stalls: barn.stalls,
-                    users: barn.users
+                    users: barn.users,
+                    healthreports: find_horses(@user).map{|h| h.healthreports}.flatten
+
 									}
 		else
 			render json: {error: "Something doesn't match up"}
@@ -51,7 +53,8 @@ class Api::V1::SessionsController < ApplicationController
                     farriers: Farrier.all,
                     paddocks: barn.paddocks,
                     stalls: barn.stalls,
-                    users: barn.users
+                    users: barn.users,
+                    healthreports: find_horses(user_in_session).map{|h| h.healthreports}.flatten
 									}
 		else
 			render json: {error: "Something doesn't match up",

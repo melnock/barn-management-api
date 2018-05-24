@@ -8,6 +8,7 @@ class Horse < ApplicationRecord
   belongs_to :user
   belongs_to :vet
   belongs_to :farrier
+  has_many :healthreports
   # has_many :workouts
   # has_many :meals
   # has_many :supplies, through: :meals

@@ -13,6 +13,10 @@ class Api::V1::HealthreportsController < ApplicationController
 
   end
 
+  def index
+    @healthreports= Healthreport.all
+  end
+
   private
 
   def healthreport_params
