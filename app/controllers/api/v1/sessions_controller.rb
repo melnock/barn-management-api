@@ -35,7 +35,8 @@ class Api::V1::SessionsController < ApplicationController
                     stalls: barn.stalls,
                     users: barn.users,
                     healthreports: find_horses(@user).map{|h| h.healthreports}.flatten,
-                    supplies: Supply.all
+                    supplies: Supply.all,
+                    meals: find_horses(@user).map{|h| h.meals}.flatten
 
 									}
 		else
@@ -56,7 +57,8 @@ class Api::V1::SessionsController < ApplicationController
                     stalls: barn.stalls,
                     users: barn.users,
                     healthreports: find_horses(user_in_session).map{|h| h.healthreports}.flatten,
-                    supplies: Supply.all
+                    supplies: Supply.all,
+                    meals: find_horses(user_in_session).map{|h| h.meals}.flatten
 
 									}
 		else

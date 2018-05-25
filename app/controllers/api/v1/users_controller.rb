@@ -17,7 +17,8 @@ class Api::V1::UsersController < ApplicationController
                     stalls: barn.stalls,
                     users: barn.users,
                     healthreports: find_horses(@user).map{|h| h.healthreports}.flatten,
-                    supplies: Supply.all
+                    supplies: Supply.all,
+                    meals: find_horses(@user).map{|h| h.meals}.flatten
 									}
     else
       render json: {error: "Something doesn't match up"}
@@ -27,6 +28,17 @@ class Api::V1::UsersController < ApplicationController
   def show
     @user = User.all.find(params[:id])
     render json: @user
+  end
+
+  def update
+    @user = User.all.find(params[:id])
+    byebug
+    @user.update(user_params)
+    if @user
+      render json: {User.all}
+    else
+      render json: {error: "Something doesn't match up"}
+    end
   end
 
   private
