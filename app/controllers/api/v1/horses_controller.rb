@@ -16,7 +16,10 @@ class Api::V1::HorsesController < ApplicationController
     @horse= Horse.find(params[:id])
     @horse.update(horse_params)
     if @horse.save
-      render json: @horse
+      render json: {
+                    horse: @horse,
+                    horses: find_horses(user_in_session)
+                  }
     else
       render json: {
         errors: @horse.errors.full_messages

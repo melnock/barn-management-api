@@ -12,6 +12,21 @@ class Api::V1::MealsController < ApplicationController
     end
   end
 
+  def update
+    @meal= Meal.find(params[:id])
+    @meal.update(meal_params)
+    if @meal.save
+      render json: {
+                    meal: @meal,
+                    meals: find_horses(user_in_session).map{|h| h.meals}.flatten
+                  }
+    else
+      render json: {
+        errors: @meal.errors.full_messages
+      }
+    end
+  end
+
     private
 
     def meal_params
