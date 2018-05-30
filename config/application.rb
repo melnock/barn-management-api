@@ -25,7 +25,7 @@ module BarnManagerApi
     config.middleware.use Rack::Cors do
         allow do
           origins "*"
-          resource '*', :headers => :any, :methods => [:get, :post, :patch, :options]
+          resource '*', :headers => :any, :methods => [:get,:delete, :post, :patch, :options]
         end
       end
 

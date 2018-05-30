@@ -42,6 +42,6 @@ class Api::V1::BarnsController < ApplicationController
   end
 
   def barn_params
-    params.require(:barn).permit([:name, :number_of_paddocks, :number_of_stalls, :address, :board_cost, :amenities => [], :images=>[:main, :indoor_arena, :outdoor_arena, :paddocks]])
+    params.require(:barn).permit([:name, :number_of_paddocks, :number_of_stalls, :board_cost,:address=>[:street_address, :city, :state, :zip], :amenities => [], :images=>[:main, :indoor_arena, :outdoor_arena, :paddocks]])
   end
 end

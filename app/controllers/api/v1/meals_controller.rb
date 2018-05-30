@@ -27,6 +27,14 @@ class Api::V1::MealsController < ApplicationController
     end
   end
 
+  def destroy
+    @meal=Meal.find(params[:id])
+    @meal.delete
+    render json: {
+      meals:find_horses(user_in_session).map{|h| h.meals}.flatten
+    }
+  end
+
     private
 
     def meal_params

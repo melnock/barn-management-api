@@ -21,7 +21,7 @@ class Api::V1::UsersController < ApplicationController
                     meals: find_horses(@user).map{|h| h.meals}.flatten
 									}
     else
-      render json: {error: "Something doesn't match up"}
+      render json: {error: @user.errors.full_messages}
     end
   end
 
@@ -35,9 +35,9 @@ class Api::V1::UsersController < ApplicationController
     byebug
     @user.update(user_params)
     if @user
-      render json: {User.all}
+      render json: {users: User.all}
     else
-      render json: {error: "Something doesn't match up"}
+      render json: {error: @user.errors.full_messages}
     end
   end
 
