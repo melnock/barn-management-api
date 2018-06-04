@@ -1,24 +1,24 @@
-# README
+## Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Backend Rails API designed to complement the [React-Redux barn-management-frontend](https://github.com/melnock/barn-management-api/ "React-Redux barn-management-frontend"). Framework is in place for growing data.
 
-Things you may want to cover:
+## Active Record Associations
 
-* Ruby version
 
-* System dependencies
+![Imgur](https://i.imgur.com/LUCzbFI.jpg "Active Record Associations")
+![Imgur](https://i.imgur.com/8rj6RT7.jpg  "preliminary table schema")
 
-* Configuration
+## Getting Started
 
-* Database creation
+Fork and clone this repository.  
 
-* Database initialization
+Run `rails db:create` and `rails db:migrate`.
 
-* How to run the test suite
+There is a seed file with some dummy data.  If you'd like to implement that, run `rails db:seed` to explore functionality.
 
-* Services (job queues, cache servers, search engines, etc.)
+Once the database is set up, start your rails server and run `npm start` on your frontend.
 
-* Deployment instructions
+### Rails version
 
-* ...
+v 5.2.0
+
